@@ -10,8 +10,8 @@ const butdecode = document.getElementById("bot-dec");
 const result = document.getElementById("resultado");
 
 butencode.addEventListener("click", () => {
-  result.innerText = cipher.encode(message.value, offset.value);
+  result.innerText = cipher.encode(offset.value, message.value);
 });
 butdecode.addEventListener("click", () => {
-  result.innerText = cipher.decode(message.value, offset.value);
+  result.innerText = cipher.decode(offset.value, message.value);
 });

@@ -6,20 +6,24 @@ const cipher = {
   //~.charCodeAt() te da el número del código ASCII
   //String.fromCharCode() te da la letra correspondiente del ASCII
 
-  encode: (message, offset) => {
-    if (!message) {
-      return "";
+  encode: (offset, message) => {
+    if (!message || !offset) {
+      throw new TypeError("No hay mensaje u offset");
     } else {
-      const string = message.toUpperCase();
       let newString = "";
 
-      for (let i = 0; i < string.length; i++) {
-        const char = string[i];
+      for (let i = 0; i < message.length; i++) {
+        const char = message[i];
         if (char.charCodeAt(0) <= 90 && char.charCodeAt(0) >= 65) {
-          const newChar = String.fromCharCode(
-            char.charCodeAt(0) - 65 + (parseInt(offset) % 26) + 65
+          const newUpChar = String.fromCharCode(
+            ((char.charCodeAt(0) - 65 + parseInt(offset)) % 26) + 65
           );
-          newString += newChar;
+          newString += newUpChar;
+        } else if (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) {
+          const newLoChar = String.fromCharCode(
+            ((char.charCodeAt(0) - 97 + parseInt(offset)) % 26) + 97
+          );
+          newString += newLoChar;
         } else {
           newString += char;
         }
@@ -27,25 +31,26 @@ const cipher = {
       return newString;
     }
   },
-  decode: (message, offset) => {
-    if (!message) {
-      return "";
+  decode: (offset, message) => {
+    if (!offset || !message) {
+      throw new TypeError("No hay mensaje u offset");
     }
-    const string = message.toUpperCase();
     let newString = "";
-
-    for (let i = 0; i < string.length; i++) {
-      const char = string[i];
-      if (char.charCodeAt(0) <= 90 && char.charCodeAt(0) >= 65) {
-        const newChar = String.fromCharCode(
-          char.charCodeAt(0) - 65 - (parseInt(offset) % 26) + 65
-        );
-        newString += newChar;
+    offset = offset % 26;
+    for (let i = 0; i < message.length; i++) {
+      const char = message[i];
+      const charCode = char.charCodeAt(0);
+      if (charCode <= 90 && charCode >= 65) {
+        const num = (charCode - 65 - offset + 26) % 26;
+        newString = newString + String.fromCharCode(num + 65);
+      } else if (charCode <= 122 && charCode >= 97) {
+        offset = offset % 26;
+        const num = (charCode - 97 - offset + 26) % 26;
+        newString = newString + String.fromCharCode(num + 97);
       } else {
         newString += char;
       }
     }
-
     return newString;
   },
 };
