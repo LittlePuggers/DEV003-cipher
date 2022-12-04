@@ -1,11 +1,4 @@
 const cipher = {
-  // Obtener el mensaje y offset(n)
-  // Implementar formula (x - 65 + n) % 26 + 65
-  // Hacer el return
-
-  //~.charCodeAt() te da el número del código ASCII
-  //String.fromCharCode() te da la letra correspondiente del ASCII
-
   encode: (offset, message) => {
     if (!message || !offset) {
       throw new TypeError("No hay mensaje u offset");
