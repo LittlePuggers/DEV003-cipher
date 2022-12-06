@@ -10,6 +10,11 @@ Para este proyecto se tomó en cuenta el código ASCII, que le da un número a c
 En este proyecto, el cifrado se implementó como una herramienta en un blog de reseñas de películas y series para evitar los spoilers. De manera que, al escribir una entrada o comentario, el autor tenga a la mano la herramienta para codificar en caso de ser un spoiler. Al contrario, si al lector no le interesa leer el spoiler, puede tomar el texto codificado y descifrarlo en la misma página.
 Es importante señalar que el número de posiciones a desplazar (llamado aquí offset) para descifrar un mensaje se escribe al final del texto entre paréntesis(#).
 
+## Bosquejo
+
+Este es el bosquejo que se hizo en un inicio.
+![Bosquejo](./src/images/bosquejo.jpg)
+
 ## Funcionalidad
 
 Se trabajó con JavaScript en dos archivos: cipher.js e index.js.
