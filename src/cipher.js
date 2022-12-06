@@ -7,14 +7,15 @@ const cipher = {
 
       for (let i = 0; i < message.length; i++) {
         const char = message[i];
-        if (char.charCodeAt(0) <= 90 && char.charCodeAt(0) >= 65) {
+        const charCode = char.charCodeAt(0);
+        if (charCode <= 90 && charCode >= 65) {
           const newUpChar = String.fromCharCode(
-            ((char.charCodeAt(0) - 65 + parseInt(offset)) % 26) + 65
+            ((charCode - 65 + parseInt(offset)) % 26) + 65
           );
           newString += newUpChar;
-        } else if (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) {
+        } else if (charCode >= 97 && charCode <= 122) {
           const newLoChar = String.fromCharCode(
-            ((char.charCodeAt(0) - 97 + parseInt(offset)) % 26) + 97
+            ((charCode - 97 + parseInt(offset)) % 26) + 97
           );
           newString += newLoChar;
         } else {
@@ -29,15 +30,18 @@ const cipher = {
       throw new TypeError("No hay mensaje u offset");
     }
     let newString = "";
+    //para evitar que sean numeros negativos y se mantenga dentro de 26
     offset = offset % 26;
     for (let i = 0; i < message.length; i++) {
       const char = message[i];
       const charCode = char.charCodeAt(0);
       if (charCode <= 90 && charCode >= 65) {
+        //restamos 65 para llevarlo a rango 0-25
+        //sumamos 26 para mover el rango y evitar negativos
+        //restamos el offset ya con modulo para que solo reste 0-25
         const num = (charCode - 65 - offset + 26) % 26;
         newString = newString + String.fromCharCode(num + 65);
       } else if (charCode <= 122 && charCode >= 97) {
-        offset = offset % 26;
         const num = (charCode - 97 - offset + 26) % 26;
         newString = newString + String.fromCharCode(num + 97);
       } else {

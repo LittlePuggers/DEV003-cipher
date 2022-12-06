@@ -25,6 +25,9 @@
           <li>BoJack Horseman</li>
           <li>Breaking Bad</li>
           <li>Game of Thrones</li>
+          <li>Lost</li>
+          <li>Rick and Morty</li>
+          <li>Spy x Family</li>
         </ul>
       </div>
       <div id="main-area">
@@ -37,27 +40,37 @@
         <h3 class="hs">Deja tus comentarios</h3>
         <div class="comment">
           <img class="img-comment" src="./images/user1.jpg">
-          <p class="text-comment">Inzbf cbe habf gentbf pbdhrgbf!(39)</p>
+          <div class="info-comment">
+            <p class="author-comment">Oogi Guirado</p>
+            <p class="text-comment">Inzbf cbe habf gentbf pbdhrgbf!(39)</p>
+          </div>
         </div>
         <div class="comment">
           <img class="img-comment" src="./images/user2.JPG">
-          <p class="text-comment">Azmcp mtknz.(999)</p>
+          <div class="info-comment">
+            <p class="author-comment">Obi Sanchez</p>
+            <p class="text-comment">Azmcp mtknz.(999)</p>
+          </div>
         </div>
       </div>
       </div>
       <div id="cipher-area">
+        <h3 class="hs">Cipher Tool</h3>
+        <br>
         <label for="mensaje">Mensaje</label>
         <input type="text" id="mensaje" name="mensaje">
         <br>
         <label for="offset">Offset</label>
         <input type="number" id="offset" name="offset" min="0" >
         <br>
-
-          <label class="switch">
-            <input type="checkbox" id="toggle" checked>
+        
+        <label class="switch" for="switchbtn" id="toggle">
+            <input type="checkbox" name="switchbtn"  id="toggleinput">
             <span class="slider" ></span>
           </label>
-          <button id="bot-enc">Codifica!</button>
+
+
+          <button id="bot-enc" class="hidden">Codifica!</button>
           <button id="bot-dec">Decodifica!</button>
 
         
