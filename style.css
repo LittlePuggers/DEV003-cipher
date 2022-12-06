@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Quicksand:wght@500;700&display=swap");
+/*fonts*/
+* {
+  font-family: "Quicksand", sans-serif;
+}
+.hs {
+  font-family: "Amatic SC", cursive;
+  margin: 0;
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 2.5em;
+}
+h3 {
+  font-size: 1.5em;
+}
+/**/
+
+#title-area {
+  background-image: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: contain;
+  width: 100vw;
+  height: 10vh;
+  opacity: 0.9;
+  color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  vertical-align: middle;
+  text-align: center;
+  text-justify: center;
+}
+
+#main-container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  width: 100vw;
+  height: max-content;
+}
+
+#menu-area {
+  border: 1px solid black;
+  background-color: lightgray;
+  margin: 5px;
+  padding: 5px;
+  width: min-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+ul {
+  padding: 0px 0px 0px 20px;
+}
+
+#main-area {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.comment {
+  display: flex;
+  margin: 15px;
+}
+.img-comment {
+  width: 75px;
+  border-radius: 50%;
+  margin: 5px;
+}
+.info-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info-comment p {
+  margin: 0;
+}
+.author-comment {
+  font-weight: bold;
+}
+
+#cipher-area {
+  border: 1px solid black;
+  background-color: lightgray;
+  margin: 5px;
+  padding-top: 1.5em;
+  width: 25%;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#mensaje {
+  width: 90%;
+  height: 2em;
+}
+#offset {
+  width: 40px;
+}
+
+#toggle-button {
+  display: flex;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 5px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(220, 143, 35);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  top: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #18b625;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}

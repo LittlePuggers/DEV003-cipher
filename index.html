@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="title-area">
+        <h1 class="hs">Encoded reviews</h1>
+      </div>
+      <div id="main-container">
+      <div id="menu-area">
+        <h3 class="hs">Movies</h2>
+        <ul>
+          <li>Amadeus</li>
+          <li>Harry Potter</li>
+          <li>Lilo & Stitch</li>
+          <li>Matando cabos</li>
+          <li>Nope</li>
+        </ul>
+        <h3 class="hs">Series</h2>
+        <ul>
+          <li>BoJack Horseman</li>
+          <li>Breaking Bad</li>
+          <li>Game of Thrones</li>
+          <li>Lost</li>
+          <li>Rick and Morty</li>
+          <li>Spy x Family</li>
+        </ul>
+      </div>
+      <div id="main-area">
+        <div id="review-area">
+        <h2 class="hs">Matando cabos</h2>
+        <div id="stars"></div>
+        <p id="review">Oscar Cabos es un terrible magnate al que todos deben respeto, para mala fortuna de "Jaque" y "Mudo", bdb wb vo tqpjmfs(1). Esta problemática situación comenzó cuando Cabos descubrió a "Jaque" cswk ngu fctkc qvtq urqkngt(2) Paulina Cabos, lo cual le valió una golpiza y ahora una muy mala experiencia. Las vivencias de este par de amigos y su mala fortuna, son el tema de esta historia que demuestra que las coincidencias tienen consecuencias.</p>
+      </div>
+      <div id="comment-area">
+        <h3 class="hs">Deja tus comentarios</h3>
+        <div class="comment">
+          <img class="img-comment" src="./images/user1.jpg">
+          <div class="info-comment">
+            <p class="author-comment">Oogi Guirado</p>
+            <p class="text-comment">Inzbf cbe habf gentbf pbdhrgbf!(39)</p>
+          </div>
+        </div>
+        <div class="comment">
+          <img class="img-comment" src="./images/user2.JPG">
+          <div class="info-comment">
+            <p class="author-comment">Obi Sanchez</p>
+            <p class="text-comment">Azmcp mtknz.(999)</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div id="cipher-area">
+        <h3 class="hs">Cipher Tool</h3>
+        <br>
+        <label for="mensaje">Mensaje</label>
+        <input type="text" id="mensaje" name="mensaje">
+        <br>
+        <label for="offset">Offset</label>
+        <input type="number" id="offset" name="offset" min="0" >
+        <br>
+        
+        <label class="switch" for="switchbtn" id="toggle">
+            <input type="checkbox" name="switchbtn"  id="toggleinput">
+            <span class="slider" ></span>
+          </label>
+
+
+          <button id="bot-enc" class="hidden">Codifica!</button>
+          <button id="bot-dec">Decodifica!</button>
+
+        
+        
+        <br>
+        <p>Resultado</p>
+        <p id="resultado"></p>
+      </div>
+    </div>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
