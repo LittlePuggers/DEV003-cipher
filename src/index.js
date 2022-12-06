@@ -12,11 +12,9 @@ const result = document.getElementById("resultado");
 toggle.addEventListener("click", () => {
   toggleInput.checked = !toggleInput.checked;
   if (toggleInput.checked) {
-    console.log("decode hidden");
     butencode.className = "visible";
     butdecode.className = "hidden";
   } else {
-    console.log("encode hidden");
     butdecode.className = "visible";
     butencode.className = "hidden";
   }
